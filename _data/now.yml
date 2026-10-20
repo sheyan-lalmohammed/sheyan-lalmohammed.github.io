@@ -8,26 +8,31 @@
 #   links        optional map: pdf, slides, code, data, page
 #   placeholder  true = rendered as a dashed "draft" card. Delete the line once the entry is real.
 
-- title: "Current project title"
-  role: "Pre-doc, Becker Friedman Institute"
+- title: "Demand Estimation Under Algorithmic Exposure"
+  role: "Solo paper"
+  status: Drafting
+  summary: >-
+    When a recommender decides what consumers see, observed shares mix preferences with exposure,
+    and the standard Berry inversion absorbs it, biasing price coefficients in ways fixed effects and
+    overidentification tests miss. I show when the algorithm's own exploration identifies demand,
+    and measure the bias on Expedia, ZOZO, Amazon and Avito data.
+  tags: [Industrial Organization, Demand Estimation, Platforms]
+
+- title: "The Economics of Optional Royalties"
+  role: "Solo paper"
+  status: Pre-submission
+  summary: >-
+    Creator royalties on NFTs are written into the token but collected by competing marketplaces.
+    Across sixteen Ethereum venues, other chains and Solana, entry by non-enforcing venues erodes
+    compliance while token-level enforcement survives; a routing model on 1.6 million trader
+    choices shows the entitlement was lost to intermediary competition, not trader evasion.
+  tags: [Industrial Organization, Platforms, Structural Estimation]
+
+- title: "Price Elasticities in Logit Demand Models"
+  role: "Pre-Doc · Goldszmidt, Henry de Frahan, List, Mogstad, Muir & Torgovitsky"
   status: In progress
   summary: >-
-    Placeholder. Describe the question, the setting and the data in one or two sentences.
-  tags: [Industrial Organization, Structural Estimation]
-  placeholder: true
-
-- title: "Second project title"
-  role: "With collaborators"
-  status: Data collection
-  summary: >-
-    Placeholder. What is new about this project, and what will it let us learn?
-  tags: [Econometrics]
-  placeholder: true
-
-- title: "Tool or side project"
-  role: "Solo project"
-  status: Idea
-  summary: >-
-    Placeholder. A package, dataset, or method you are building. Add a code link when it is public.
-  tags: [Research Tools]
-  placeholder: true
+    A quadratic approximation to mixed-logit own-price elasticities, evaluated across nine
+    demand applications from cereal and autos to liquor, Medicare Advantage and painkillers. I
+    contribute to the code pipeline that reproduces the paper's figures and tables.
+  tags: [Econometrics, Demand Estimation]

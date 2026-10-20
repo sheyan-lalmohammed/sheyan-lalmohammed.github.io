@@ -6,7 +6,7 @@
 - name: Structural Microeconomics
   items: structural demand and supply estimation, auction and matching models, dynamic discrete choice, counterfactual policy simulation, program evaluation techniques
 
-- name: Structural Econometrics
+- name: Econometrics
   items: identification and partial identification, semiparametric and nonparametric estimation, dynamic panel and state-dependence models, inference for counterfactuals, simulation-based estimation of strategic models
 
 - name: Microeconomic Theory

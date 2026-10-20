@@ -35,16 +35,16 @@ scripts:
     </div>
   </div>
 
-  <aside class="readout mono reveal" aria-hidden="true">
-    <p class="readout__title"><span class="pulse"></span>live · market simulation</p>
-    <dl>
-      <div><dt>buyers</dt><dd data-readout="buyers">0</dd></div>
-      <div><dt>sellers</dt><dd data-readout="sellers">0</dd></div>
-      <div><dt>trades</dt><dd data-readout="trades">0</dd></div>
-      <div><dt>p&#770;</dt><dd data-readout="price">—</dd></div>
-    </dl>
-    <svg class="readout__spark" viewBox="0 0 120 28" preserveAspectRatio="none"><polyline data-readout="spark" points=""/></svg>
-    <p class="readout__hint">move your cursor to attract agents</p>
+  <aside class="readout mono reveal" aria-label="Live research simulations">
+    <div class="readout__tabs" role="tablist" data-readout="tabs"></div>
+    <p class="readout__title"><span class="pulse" aria-hidden="true"></span><span data-readout="title"></span></p>
+    <ul class="readout__shares" data-readout="bars"></ul>
+    <dl data-readout="stats"></dl>
+    <div class="readout__sparkwrap">
+      <span class="readout__sparklabel" data-readout="spark-label"></span>
+      <svg class="readout__spark" viewBox="0 0 120 28" preserveAspectRatio="none" aria-hidden="true"><polyline data-readout="spark" points=""/></svg>
+    </div>
+    <p class="readout__event" data-readout="event" aria-live="polite"></p>
   </aside>
 
   <a class="hero__scroll mono" href="#stats" aria-label="Scroll down">
@@ -216,7 +216,7 @@ scripts:
 <section class="section contact" id="contact">
   <div class="contact__inner wrap reveal">
     <p class="eyebrow mono">06 / Contact</p>
-    <h2 class="contact__title">Let's talk about <span class="accent">markets</span>.</h2>
+    <h2 class="contact__title">Let's talk about <span class="accent">economics</span>.</h2>
     <p class="section-lede">Questions about a paper, a dataset, or a collaboration? Email is best.</p>
     <div class="contact__actions">
       <a class="btn btn--primary btn--lg" href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope" aria-hidden="true"></i>{{ site.email }}</a>
