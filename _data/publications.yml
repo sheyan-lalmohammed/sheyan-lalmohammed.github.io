@@ -1,70 +1,235 @@
-main:
+# Research archive. Every paper, thesis, presentation and essay lives here.
+# Newest first is not required: pages sort by year automatically.
+#
+# Fields
+#   id        short unique slug (used for anchors and for linking from tools.yml / story.yml)
+#   title     full title, in quotes
+#   authors   separate authors with ";". Your name is bolded automatically.
+#   venue     where it appeared (journal, workshop, thesis program, ...)
+#   year      number
+#   type      Thesis | Working paper | Workshop paper | Presentation | Policy paper | Essay | Published
+#   badge     short label shown on the thumbnail
+#   tags      list; drives the filter chips on /archive/
+#   featured  true = also shown in "Selected research" on the home page
+#   note      optional highlight (e.g. "Oral presentation", "R&R at AER")
+#   image     optional thumbnail under assets/img/
+#   links     any of: pdf, slides, code, data, page, bibtex, video (local path or full URL)
+#   abstract  plain text
+#
+# Template for a new entry (copy, uncomment, fill in):
+#
+# - id: my-new-paper
+#   title: "Title of the Paper"
+#   authors: Sheyan Lalmohammed; Coauthor Name
+#   venue: Working paper
+#   year: 2027
+#   type: Working paper
+#   badge: SHORT
+#   tags: [Industrial Organization]
+#   featured: true
+#   links:
+#     pdf: assets/files/my-new-paper.pdf
+#   abstract: >-
+#     One paragraph.
 
-  - title: "The Economics of Optional Royalties: Platform Competition, Enforcement, and Routing in NFT Markets"
-    authors: <strong>Sheyan Lalmohammed</strong>, Jere Behrman* (*Advisor)
-    conference_short: NFT-Enforcement
-    conference: Economics Honors Thesis <strong>(WRS)</strong>, 2026.
-    abstract: This paper studies how royalty enforcement policies adopted by NFT marketplaces shape platform competition, trader routing behavior, and creator revenues. Motivated by the recent divergence between marketplaces that impose mandatory royalties and those that offer optional or weak enforcement of royalties for creators, this paper develops a new three-period theoretical model with a single creator, a continuum of heterogeneous traders, and competing platforms which can choose their enforcement credibility. The model nests mandatory, optional, and zero-royalty regimes and incorporates switching costs away from a collections minting platform. Through several analytical cases, including monopoly, symmetric duopoly, trader information and motive differences, and differing regime standoffs, the paper shows how enforcement choices interact with routing incentives. In environments dominated by speculators or with low switching frictions, platforms face downward pressures to zero enforcement credibility. When collectors or positive switching costs are sufficiently important, interior non-zero enforcement equilibria or asymmetric outcomes are shown to exist. Using Ethereum NFT trade-level data from 2022-2024, the paper additionally constructs empirical measures of royalty enforcement credibility, effective trading costs, and switching frictions. Using an estimated structural model, trader cost-sensitivity, collector valuation of enforcement, share of speculators in trading population, and price-dependent switching costs are found. Using the structural model, the paper shows that under changes to optional and mandatory regime enforcement, strengthening or weakening optional royalty compliance, and reducing switching frictions, key equilibrium changes to market share emerge.
-    pdf:
-    code: https://github.com/sheyan-lalmohammed/replication_package_economics_of_nft_royalties
-    page: 
-    image: assets/img/NFT-distribution.png
+- id: nft-royalties
+  title: "The Economics of Optional Royalties: Platform Competition, Enforcement, and Routing in NFT Markets"
+  authors: Sheyan Lalmohammed; Jere Behrman (advisor)
+  venue: "Economics Honors Thesis, University of Pennsylvania"
+  year: 2026
+  type: Thesis
+  badge: "NFT-Enforcement"
+  tags: [Industrial Organization, Platforms, Structural Estimation]
+  featured: true
+  image: "assets/img/NFT-distribution.png"
+  links:
+    pdf: "assets/files/nft_royalties.pdf"
+    slides: "assets/files/NFT-market-presentation.pdf"
+  abstract: >-
+    This paper studies how royalty enforcement policies adopted by NFT marketplaces shape platform
+    competition, trader routing behavior, and creator revenues. Motivated by the recent divergence
+    between marketplaces that impose mandatory royalties and those that offer optional or weak
+    enforcement of royalties for creators, this paper develops a new three-period theoretical model with
+    a single creator, a continuum of heterogeneous traders, and competing platforms which can choose
+    their enforcement credibility. The model nests mandatory, optional, and zero-royalty regimes and
+    incorporates switching costs away from a collections minting platform. Through several analytical
+    cases, including monopoly, symmetric duopoly, trader information and motive differences, and
+    differing regime standoffs, the paper shows how enforcement choices interact with routing
+    incentives. In environments dominated by speculators or with low switching frictions, platforms face
+    downward pressures to zero enforcement credibility. When collectors or positive switching costs are
+    sufficiently important, interior non-zero enforcement equilibria or asymmetric outcomes are shown to
+    exist. Using Ethereum NFT trade-level data from 2022-2024, the paper additionally constructs
+    empirical measures of royalty enforcement credibility, effective trading costs, and switching
+    frictions. Using an estimated structural model, trader cost-sensitivity, collector valuation of
+    enforcement, share of speculators in trading population, and price-dependent switching costs are
+    found. Using the structural model, the paper shows that under changes to optional and mandatory
+    regime enforcement, strengthening or weakening optional royalty compliance, and reducing switching
+    frictions, key equilibrium changes to market share emerge.
 
-  - title: Bayesian and Dynamic Bayesian Networks for Credit Risk Modeling in Buy Now, Pay Later
-    authors: <strong>Sheyan Lalmohammed</strong>, Paul Sabin* (*Advisor)
-    conference_short: BN-DBN BNPL
-    conference: Final Thesis - Wharton Research Scholars <strong>(WRS)</strong>, 2025.
-    abstract: This paper investigates the application of Bayesian Networks (BNs) and Dynamic Bayesian Networks (DBNs) on personalized credit risk assessment in the Buy Now, Pay Later (BNPL) industry. Using data from the Lending Club as a proxy for BNPL loans, the paper constructs multiple static and 5-period temporal network structures by discretizing borrower, loan, and macroeconomic characteristics. The use of score-based structure-learning methods allows for the identification of optimal network structures.  A cost-sensitive bootstrap evaluation assesses model performance across multiple classification metrics. Results show that naive BNs offer high interpretability, BNs with learned structures capture important inter-dependencies in the data, and DBNs provide improved temporal inference, all while remaining computationally efficient for real-time decision making for a BNPL context. The findings suggest that using these models can serve effectively as a secondary check for default prediction flexible to the needs of the lender, balancing risk and operational constraints in short-term lending.
-    pdf: assets/files/Final Thesis - Sheyan Lalmohammed.pdf
-    code: https://github.com/sheyan-lalmohammed/bnpl-bayesian-networks
-    page: https://repository.upenn.edu/entities/publication/0c3277ec-3159-4a5d-826f-5cf7fef3d73c
-    image: assets/img/BN-DBN BNPL.png
+- id: bnpl-credit-risk
+  title: "Bayesian and Dynamic Bayesian Networks for Credit Risk Modeling in Buy Now, Pay Later"
+  authors: Sheyan Lalmohammed; Paul Sabin (advisor)
+  venue: "Wharton Research Scholars Thesis"
+  year: 2025
+  type: Thesis
+  badge: "BN-DBN BNPL"
+  tags: [Bayesian Methods, Credit Risk, Household Finance]
+  featured: true
+  image: "assets/img/BN-DBN BNPL.png"
+  links:
+    pdf: "assets/files/Final Thesis - Sheyan Lalmohammed.pdf"
+    code: "https://github.com/sheyan-lalmohammed/bnpl-bayesian-networks"
+    page: "https://repository.upenn.edu/entities/publication/0c3277ec-3159-4a5d-826f-5cf7fef3d73c"
+  abstract: >-
+    This paper investigates the application of Bayesian Networks (BNs) and Dynamic Bayesian Networks
+    (DBNs) on personalized credit risk assessment in the Buy Now, Pay Later (BNPL) industry. Using data
+    from the Lending Club as a proxy for BNPL loans, the paper constructs multiple static and 5-period
+    temporal network structures by discretizing borrower, loan, and macroeconomic characteristics. The
+    use of score-based structure-learning methods allows for the identification of optimal network
+    structures.  A cost-sensitive bootstrap evaluation assesses model performance across multiple
+    classification metrics. Results show that naive BNs offer high interpretability, BNs with learned
+    structures capture important inter-dependencies in the data, and DBNs provide improved temporal
+    inference, all while remaining computationally efficient for real-time decision making for a BNPL
+    context. The findings suggest that using these models can serve effectively as a secondary check for
+    default prediction flexible to the needs of the lender, balancing risk and operational constraints
+    in short-term lending.
 
-  - title: "Modeling Human Behavior Without Humans – Bringing Prospect Theory to Multi-Agent Reinforcement Learning"
-    authors: Sheyan Lalmohammed, Khush Gupta, ALok Shah, Keshav Ramji, Damek Davis* (*Advisor)
-    conference_short: CPT-MARL
-    conference: MAS Workshop of the 42nd International Conference on Machine Learning (ICML 2025)
-    abstract: We apply CPT-MADDPG, a novel extension of the Multi-Agent Deep Deterministic Policy Gradient algorithm that embeds full Cumulative Prospect Theory (CPT) value and probability-weighting transforms into both critic and actor updates. By replacing expected-return maximization with rank-dependent Choquet integrals over gains and losses, CPT-MADDPG endows agents with tunable risk profiles—ranging from exploratory, risk-seeking behaviors to conservative, loss-averse ones—without human intervention. We further propose two extensions- an observability adjustment, which aggregates cross-agent subjective utilities in the Bellman backup when agents share CPT parameters; and adaptive behavioral parameters, where CPT hyperparameters are learned online via a secondary loss. Across competitive pursuit (Simple Tag), cooperative coverage (Simple Spread), and strategic bidding (first-price auctions), we show that risk-seeking parameterized CPT speeds early learning, extreme risk-averse parameterized CPT enforces prudence at a performance cost, transparent utility sharing preserves coordination under heterogeneity, and naive dynamic adaptation destabilizes convergence. In auction settings, learned CPT policies replicate the overbidding phenomenon documented by Josheski and Delcev, yielding short-term gains followed by long-term losses. Our work demonstrates a principled, differentiable framework for integrating human-like risk attitudes into multi-agent RL.
-    pdf: assets/files/CPT-MARL.pdf
-    code: https://github.com/sheyan-lalmohammed/STAT-4830-CPT-MARL-project
-    page: https://github.com/sheyan-lalmohammed/STAT-4830-CPT-MARL-project
-    image: assets/img/CPT-MARL.png
+- id: cpt-marl
+  title: "Modeling Human Behavior Without Humans: Bringing Prospect Theory to Multi-Agent Reinforcement Learning"
+  authors: Sheyan Lalmohammed; Khush Gupta; Alok Shah; Keshav Ramji; Damek Davis (advisor)
+  venue: "MAS Workshop, 42nd International Conference on Machine Learning (ICML 2025)"
+  year: 2025
+  type: Workshop paper
+  badge: "CPT-MARL"
+  tags: [Behavioral Economics, Game Theory, Machine Learning]
+  featured: true
+  image: "assets/img/CPT-MARL.png"
+  links:
+    pdf: "assets/files/CPT-MARL.pdf"
+    code: "https://github.com/sheyan-lalmohammed/STAT-4830-CPT-MARL-project"
+  abstract: >-
+    We apply CPT-MADDPG, a novel extension of the Multi-Agent Deep Deterministic Policy Gradient
+    algorithm that embeds full Cumulative Prospect Theory (CPT) value and probability-weighting
+    transforms into both critic and actor updates. By replacing expected-return maximization with rank-
+    dependent Choquet integrals over gains and losses, CPT-MADDPG endows agents with tunable risk
+    profiles—ranging from exploratory, risk-seeking behaviors to conservative, loss-averse ones—without
+    human intervention. We further propose two extensions- an observability adjustment, which aggregates
+    cross-agent subjective utilities in the Bellman backup when agents share CPT parameters; and
+    adaptive behavioral parameters, where CPT hyperparameters are learned online via a secondary loss.
+    Across competitive pursuit (Simple Tag), cooperative coverage (Simple Spread), and strategic bidding
+    (first-price auctions), we show that risk-seeking parameterized CPT speeds early learning, extreme
+    risk-averse parameterized CPT enforces prudence at a performance cost, transparent utility sharing
+    preserves coordination under heterogeneity, and naive dynamic adaptation destabilizes convergence.
+    In auction settings, learned CPT policies replicate the overbidding phenomenon documented by
+    Josheski and Delcev, yielding short-term gains followed by long-term losses. Our work demonstrates a
+    principled, differentiable framework for integrating human-like risk attitudes into multi-agent RL.
 
-  - title: Causal Inference Under Interference
-    authors: Sheyan Lalmohammed, Abhinandan Dhalal* (*Mentor)
-    conference_short: CI-INTF
-    conference: Wharton Directed Reading Program <strong>(WDRP)</strong>, 2025.
-    abstract: In this presentation, we explore how causal studies often assume each person’s treatment only affects themselves, and what happens when that assumption fails and treatments spill over to others. We begin by reviewing the four core rules to conduct causal inference and show how real-world interactions break these rules. Next, we discuss simple modeling methods to correct for spillover bias and illustrate how social network features like homophily and contagion can make treatment effects appear stronger than they truly are. We then introduce intuitive graph‑based representations, such as temporal DAGs and chain graphs, and present a practical two‑step approach to using these representations that remains effective even when the full network connections aren’t known. Through this presentation, you’ll understand why accounting for interference in causal inference is crucial and have clear tools to adjust your analyses so you draw accurate conclusions.
-    pdf: assets/files/WDRP_Final_Presentation_Sheyan.pdf
-    page: https://sites.google.com/view/wharton-drp/previous/spring-2025?authuser=0
-    notes: Oral Presentation
-    image: assets/img/CI-INTF.png
+- id: causal-interference
+  title: "Causal Inference Under Interference"
+  authors: Sheyan Lalmohammed; Abhinandan Dhalal (mentor)
+  venue: "Wharton Directed Reading Program"
+  year: 2025
+  type: Presentation
+  badge: "CI-INTF"
+  tags: [Causal Inference, Econometrics]
+  featured: false
+  note: Oral presentation
+  image: "assets/img/CI-INTF.png"
+  links:
+    slides: "assets/files/WDRP_Final_Presentation_Sheyan.pdf"
+    page: "https://sites.google.com/view/wharton-drp/previous/spring-2025"
+  abstract: >-
+    In this presentation, we explore how causal studies often assume each person’s treatment only
+    affects themselves, and what happens when that assumption fails and treatments spill over to others.
+    We begin by reviewing the four core rules to conduct causal inference and show how real-world
+    interactions break these rules. Next, we discuss simple modeling methods to correct for spillover
+    bias and illustrate how social network features like homophily and contagion can make treatment
+    effects appear stronger than they truly are. We then introduce intuitive graph‑based
+    representations, such as temporal DAGs and chain graphs, and present a practical two‑step approach
+    to using these representations that remains effective even when the full network connections aren’t
+    known. Through this presentation, you’ll understand why accounting for interference in causal
+    inference is crucial and have clear tools to adjust your analyses so you draw accurate conclusions.
 
-  - title: Welfare Modeling with AI as Economic Agents':' A Game-Theoretic and Behavioral Approach
-    authors: <strong>Sheyan Lalmohammed</strong>
-    conference_short: HUM-AI-WELF
-    conference: 2024
-    abstract: The integration of artificial intelligence (AI) into economic systems represents a transformative shift in decision-making frameworks, introducing novel dynamics between human and AI agents. This paper proposes a welfare model that incorporates both game-theoretic and behavioral dimensions to optimize interactions within human-AI ecosystems. By leveraging agent-based modeling (ABM), we simulate these interactions, accounting for trust evolution, perceived risks, and cognitive costs. The framework redefines welfare as the aggregate utility of interactions, adjusted for collaboration synergies, efficiency penalties, and equity considerations. Dynamic trust is modeled using Bayesian updating mechanisms, while synergies between agents are quantified through a collaboration index rooted in cooperative game theory. Results reveal that trust-building and skill development are pivotal to maximizing welfare, while sensitivity analyses highlight the trade-offs between AI complexity, equity, and efficiency. This research provides actionable insights for policymakers and system designers, emphasizing the importance of equitable AI adoption and fostering sustainable human-AI collaborations.
-    pdf: https://arxiv.org/pdf/2501.15317
-    code: https://github.com/sheyan-lalmohammed
-    page: https://arxiv.org/abs/2501.15317
-    image: assets/img/HUM-AI-WELF.png
+- id: ai-welfare
+  title: "Welfare Modeling with AI as Economic Agents: A Game-Theoretic and Behavioral Approach"
+  authors: Sheyan Lalmohammed
+  venue: "arXiv preprint 2501.15317"
+  year: 2024
+  type: Working paper
+  badge: "HUM-AI-WELF"
+  tags: [Game Theory, Behavioral Economics, AI]
+  featured: false
+  image: "assets/img/HUM-AI-WELF.png"
+  links:
+    pdf: "https://arxiv.org/pdf/2501.15317"
+    page: "https://arxiv.org/abs/2501.15317"
+  abstract: >-
+    The integration of artificial intelligence (AI) into economic systems represents a transformative
+    shift in decision-making frameworks, introducing novel dynamics between human and AI agents. This
+    paper proposes a welfare model that incorporates both game-theoretic and behavioral dimensions to
+    optimize interactions within human-AI ecosystems. By leveraging agent-based modeling (ABM), we
+    simulate these interactions, accounting for trust evolution, perceived risks, and cognitive costs.
+    The framework redefines welfare as the aggregate utility of interactions, adjusted for collaboration
+    synergies, efficiency penalties, and equity considerations. Dynamic trust is modeled using Bayesian
+    updating mechanisms, while synergies between agents are quantified through a collaboration index
+    rooted in cooperative game theory. Results reveal that trust-building and skill development are
+    pivotal to maximizing welfare, while sensitivity analyses highlight the trade-offs between AI
+    complexity, equity, and efficiency. This research provides actionable insights for policymakers and
+    system designers, emphasizing the importance of equitable AI adoption and fostering sustainable
+    human-AI collaborations.
 
-  - title: "An In-Depth Analysis of the Implications of Implementing Digital Currencies within Developing Economies: Evaluating their Potential Contributions to Financial Inclusion, Economic Development, and Socioeconomic Mobility"
-    authors: <strong>Sheyan Lalmohammed</strong>
-    conference_short: GRC-CRYPTO-DEV
-    conference: Economic Development Series - Wharton Global Research and Consulting <strong>(GRC)</strong>, 2024.
-    abstract: This paper examines the role of digital currencies in fostering financial inclusion and economic development, particularly in developing economies. Through an analysis of various digital currency forms—cryptocurrencies, Central Bank Digital Currencies (CBDCs), stablecoins, and utility tokens—the study evaluates their potential to streamline financial transactions, reduce costs, and offer secure financial services to marginalized communities. The integration of these technologies in developing regions is facilitated by the rapid digitization of financial services and the widespread adoption of mobile technology, making digital currencies a viable alternative to traditional financial systems. The paper highlights the economic benefits of digital currencies, such as enhanced business operations, international investment attraction, and stimulation of domestic economic growth across crucial sectors. Socially, digital currencies promise greater equity in financial access, potentially serving as catalysts for social and economic advancement, particularly for those in lower-income or marginalized regions. However, the success of digital currencies in achieving these outcomes is contingent upon robust infrastructure, effective regulatory frameworks, and strategic implementation to prevent exacerbating existing inequalities. The conclusion underscores a mixed potential impact on financial inclusion, indicating that while digital currencies offer significant opportunities for socio-economic development, their effectiveness is heavily dependent on addressing infrastructural and governance challenges. Future strategies should focus on ensuring that digital currency adoption aligns with broader economic and social goals to fully harness their transformative potential.
-    pdf: assets/files/SheyanLalmohammed_FinalPaper_GRC.pdf
-    image: assets/img/GRC.png
+- id: digital-currencies-development
+  title: "An In-Depth Analysis of the Implications of Implementing Digital Currencies within Developing Economies: Evaluating their Potential Contributions to Financial Inclusion, Economic Development, and Socioeconomic Mobility"
+  authors: Sheyan Lalmohammed
+  venue: "Economic Development Series, Wharton Global Research and Consulting"
+  year: 2024
+  type: Policy paper
+  badge: "GRC-CRYPTO-DEV"
+  tags: [Development, Digital Currency]
+  featured: false
+  image: "assets/img/GRC.png"
+  links:
+    pdf: "assets/files/SheyanLalmohammed_FinalPaper_GRC.pdf"
+  abstract: >-
+    This paper examines the role of digital currencies in fostering financial inclusion and economic
+    development, particularly in developing economies. Through an analysis of various digital currency
+    forms—cryptocurrencies, Central Bank Digital Currencies (CBDCs), stablecoins, and utility tokens—the
+    study evaluates their potential to streamline financial transactions, reduce costs, and offer secure
+    financial services to marginalized communities. The integration of these technologies in developing
+    regions is facilitated by the rapid digitization of financial services and the widespread adoption
+    of mobile technology, making digital currencies a viable alternative to traditional financial
+    systems. The paper highlights the economic benefits of digital currencies, such as enhanced business
+    operations, international investment attraction, and stimulation of domestic economic growth across
+    crucial sectors. Socially, digital currencies promise greater equity in financial access,
+    potentially serving as catalysts for social and economic advancement, particularly for those in
+    lower-income or marginalized regions. However, the success of digital currencies in achieving these
+    outcomes is contingent upon robust infrastructure, effective regulatory frameworks, and strategic
+    implementation to prevent exacerbating existing inequalities. The conclusion underscores a mixed
+    potential impact on financial inclusion, indicating that while digital currencies offer significant
+    opportunities for socio-economic development, their effectiveness is heavily dependent on addressing
+    infrastructural and governance challenges. Future strategies should focus on ensuring that digital
+    currency adoption aligns with broader economic and social goals to fully harness their
+    transformative potential.
 
-  - title: The Complex Framework to a Successful Central Bank Digital Currency
-    authors: <strong>Sheyan Lalmohammed</strong>
-    conference_short: HUEA
-    conference: Harvard Undergraduate Economics Association - International Economics Essay Competition (Top 20 Placement), 2022
-    abstract: My submission to the Harvard University International Economics Essay Contest for the following prompt where it placed within the top 20 of all entries worldwide. “The rise of central bank digital currencies (CBDCs), in addition to existing forms of decentralized cryptocurrencies, could eventually shape the way global finance is conducted through technology. This spells significant economic and political repercussions, especially as non-US countries such as China implement CBDCs to varying extents. In light of these developments, how should the Federal Reserve, European Central Bank, or other institutions and governments proceed with the development of CBDCs in their respective economies?”
-    pdf: assets/files/CBDC_HUEC.pdf
-    image: assets/img/CBDC_HEUC.png
-
-
-  
+- id: cbdc-framework
+  title: "The Complex Framework to a Successful Central Bank Digital Currency"
+  authors: Sheyan Lalmohammed
+  venue: "Harvard Undergraduate Economics Association, International Economics Essay Competition"
+  year: 2022
+  type: Essay
+  badge: "HUEA"
+  tags: [Monetary Economics, Digital Currency]
+  featured: false
+  note: Top 20 worldwide
+  image: "assets/img/CBDC_HEUC.png"
+  links:
+    pdf: "assets/files/CBDC_HUEC.pdf"
+  abstract: >-
+    My submission to the Harvard University International Economics Essay Contest for the following
+    prompt where it placed within the top 20 of all entries worldwide. “The rise of central bank digital
+    currencies (CBDCs), in addition to existing forms of decentralized cryptocurrencies, could
+    eventually shape the way global finance is conducted through technology. This spells significant
+    economic and political repercussions, especially as non-US countries such as China implement CBDCs
+    to varying extents. In light of these developments, how should the Federal Reserve, European Central
+    Bank, or other institutions and governments proceed with the development of CBDCs in their
+    respective economies?”

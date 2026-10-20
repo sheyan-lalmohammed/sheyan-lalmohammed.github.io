@@ -1,0 +1,33 @@
+# "Current work" on the home page. Newest or most important first.
+#
+#   title        project name
+#   role         your role (e.g. "Pre-doc RA with Prof. X", "Solo project")
+#   status       short status chip: Idea | In progress | Data collection | Estimation | Drafting | Under review
+#   summary      one or two sentences
+#   tags         list of topics
+#   links        optional map: pdf, slides, code, data, page
+#   placeholder  true = rendered as a dashed "draft" card. Delete the line once the entry is real.
+
+- title: "Current project title"
+  role: "Pre-doc, Becker Friedman Institute"
+  status: In progress
+  summary: >-
+    Placeholder. Describe the question, the setting and the data in one or two sentences.
+  tags: [Industrial Organization, Structural Estimation]
+  placeholder: true
+
+- title: "Second project title"
+  role: "With collaborators"
+  status: Data collection
+  summary: >-
+    Placeholder. What is new about this project, and what will it let us learn?
+  tags: [Econometrics]
+  placeholder: true
+
+- title: "Tool or side project"
+  role: "Solo project"
+  status: Idea
+  summary: >-
+    Placeholder. A package, dataset, or method you are building. Add a code link when it is public.
+  tags: [Research Tools]
+  placeholder: true

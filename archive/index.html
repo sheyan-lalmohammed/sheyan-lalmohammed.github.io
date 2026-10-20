@@ -1,0 +1,79 @@
+---
+layout: default
+title: Research Archive
+slug: archive
+description: Every paper, thesis, presentation and essay by Sheyan Lalmohammed, with abstracts, PDFs and code.
+scripts:
+  - /assets/js/archive.js
+---
+{%- assign pubs = site.data.publications | sort: "year" | reverse -%}
+{%- assign by_year = pubs | group_by: "year" | sort: "name" | reverse -%}
+{%- assign all_tags = site.data.publications | map: "tags" | join: "|" | split: "|" | uniq | sort -%}
+{%- assign all_types = site.data.publications | map: "type" | uniq | sort -%}
+
+<section class="page-hero wrap">
+  <p class="eyebrow mono reveal">Archive</p>
+  <h1 class="page-title" data-split-words>Research archive.</h1>
+  <p class="section-lede reveal">Every paper, thesis, presentation and essay, from {{ pubs.last.year }} to today. Filter by topic or format, or search titles, coauthors and abstracts.</p>
+</section>
+
+<section class="archive wrap">
+  <div class="filters reveal" role="search">
+    <label class="search">
+      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+      <input type="search" placeholder="Search the archive…" aria-label="Search the archive" data-search>
+      <kbd class="mono">/</kbd>
+    </label>
+    <div class="chips" data-filter-group="type" aria-label="Filter by format">
+      <button class="chip is-active" type="button" data-filter="*">All formats</button>
+      {%- for t in all_types %}
+      <button class="chip" type="button" data-filter="{{ t }}">{{ t }}</button>
+      {%- endfor %}
+    </div>
+    <div class="chips" data-filter-group="tag" aria-label="Filter by topic">
+      <button class="chip is-active" type="button" data-filter="*">All topics</button>
+      {%- for t in all_tags %}
+      <button class="chip" type="button" data-filter="{{ t }}">{{ t }}</button>
+      {%- endfor %}
+    </div>
+    <p class="filters__count mono" aria-live="polite"><span data-count-shown>{{ pubs | size }}</span> of {{ pubs | size }} entries</p>
+  </div>
+
+  <div class="timeline">
+    {%- for group in by_year %}
+    <div class="year-group" data-year-group>
+      <h2 class="year-group__label mono">{{ group.name }}</h2>
+      <div class="year-group__items">
+        {%- for p in group.items %}
+        {%- capture haystack %}{{ p.title }} {{ p.authors }} {{ p.venue }} {{ p.abstract }} {{ p.tags | join: " " }}{% endcapture %}
+        <article class="pub reveal" id="{{ p.id }}" data-pub data-type="{{ p.type }}" data-tags="{{ p.tags | join: '|' }}" data-text="{{ haystack | downcase | strip_newlines | escape }}">
+          {%- if p.image %}
+          <div class="pub__media">
+            <img src="{% include url.html u=p.image %}" alt="" loading="lazy">
+            <span class="badge">{{ p.badge }}</span>
+          </div>
+          {%- endif %}
+          <div class="pub__body">
+            <p class="card__meta mono">{{ p.type }}{% if p.note %} · <span class="accent">{{ p.note }}</span>{% endif %}</p>
+            <h3 class="pub__title">{{ p.title }}</h3>
+            <p class="pub__authors">{% include authors.html authors=p.authors %}</p>
+            <p class="pub__venue">{{ p.venue }}, {{ p.year }}</p>
+            {%- if p.abstract %}
+            <details class="pub__abstract">
+              <summary class="mono">Abstract</summary>
+              <p>{{ p.abstract }}</p>
+            </details>
+            {%- endif %}
+            <div class="pub__foot">
+              <div class="links">{% include links.html links=p.links %}</div>
+              <ul class="tags">{% for t in p.tags %}<li>{{ t }}</li>{% endfor %}</ul>
+            </div>
+          </div>
+        </article>
+        {%- endfor %}
+      </div>
+    </div>
+    {%- endfor %}
+    <p class="empty mono" data-empty hidden>No entries match. <button type="button" class="link" data-reset>Clear filters</button></p>
+  </div>
+</section>

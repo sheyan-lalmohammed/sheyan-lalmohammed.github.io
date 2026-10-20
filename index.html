@@ -1,0 +1,227 @@
+---
+layout: default
+slug: home
+scripts:
+  - /assets/js/hero.js
+  - /assets/js/story.js
+---
+{%- assign pubs = site.data.publications | sort: "year" | reverse -%}
+{%- assign featured = pubs | where: "featured", true -%}
+{%- assign real_tools = site.data.tools | where_exp: "t", "t.placeholder != true" -%}
+{%- assign first_year = site.data.publications | map: "year" | sort | first -%}
+{%- assign this_year = site.time | date: "%Y" | plus: 0 -%}
+{%- assign years_active = this_year | minus: first_year -%}
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="top">
+  <canvas class="hero__canvas" data-hero-canvas aria-hidden="true"></canvas>
+  <div class="hero__grid" aria-hidden="true"></div>
+
+  <div class="hero__inner wrap">
+    <p class="eyebrow mono reveal"><span class="pulse" aria-hidden="true"></span><span>{{ site.position }} · <a href="{{ site.affiliation_link }}" target="_blank" rel="noopener">{{ site.affiliation_short }}</a></span></p>
+    <h1 class="hero__title" data-split>
+      <span class="line">Sheyan</span>
+      <span class="line"><span class="grad-text">Lalmohammed</span></span>
+    </h1>
+    <p class="hero__field mono reveal">
+      <span class="muted">research_focus =</span>
+      <span class="hero__word" data-rotator data-words="{{ site.fields | jsonify | escape }}">{{ site.fields | first }}</span><span class="caret" aria-hidden="true"></span>
+    </p>
+    <p class="hero__lede reveal">{{ site.tagline }}</p>
+    <div class="hero__cta reveal">
+      <a class="btn btn--primary" href="#story">Read the story <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+      <a class="btn" href="#now">Current work</a>
+      <a class="btn btn--ghost" href="{{ '/archive/' | relative_url }}">Research archive</a>
+    </div>
+  </div>
+
+  <aside class="readout mono reveal" aria-hidden="true">
+    <p class="readout__title"><span class="pulse"></span>live · market simulation</p>
+    <dl>
+      <div><dt>buyers</dt><dd data-readout="buyers">0</dd></div>
+      <div><dt>sellers</dt><dd data-readout="sellers">0</dd></div>
+      <div><dt>trades</dt><dd data-readout="trades">0</dd></div>
+      <div><dt>p&#770;</dt><dd data-readout="price">—</dd></div>
+    </dl>
+    <svg class="readout__spark" viewBox="0 0 120 28" preserveAspectRatio="none"><polyline data-readout="spark" points=""/></svg>
+    <p class="readout__hint">move your cursor to attract agents</p>
+  </aside>
+
+  <a class="hero__scroll mono" href="#stats" aria-label="Scroll down">
+    <span>scroll</span><span class="hero__scroll-line" aria-hidden="true"></span>
+  </a>
+</section>
+
+<!-- ============================== STATS ============================== -->
+<section class="stats wrap" id="stats" aria-label="At a glance">
+  <div class="stat reveal">
+    <span class="stat__num" data-count="{{ site.data.publications | size }}">{{ site.data.publications | size }}</span>
+    <span class="stat__label">papers, theses &amp; talks</span>
+  </div>
+  <div class="stat reveal">
+    <span class="stat__num" data-count="{{ real_tools | size }}">{{ real_tools | size }}</span>
+    <span class="stat__label">codebases &amp; replication packages</span>
+  </div>
+  <div class="stat reveal">
+    <span class="stat__num" data-count="{{ years_active }}" data-suffix="+">{{ years_active }}+</span>
+    <span class="stat__label">years doing research</span>
+  </div>
+  <div class="stat reveal">
+    <span class="stat__num" data-count="{{ site.data.interests | size }}">{{ site.data.interests | size }}</span>
+    <span class="stat__label">fields of interest</span>
+  </div>
+</section>
+
+<!-- ============================== STORY ============================== -->
+<section class="section story" id="story">
+  <header class="section-head wrap">
+    <p class="eyebrow mono">01 / Story</p>
+    <h2 class="section-title" data-split-words>How I got to the questions I work on.</h2>
+  </header>
+
+  <div class="story__layout wrap">
+    <div class="story__figure">
+      <figure class="figure-card">
+        <div class="figure-card__bar mono">
+          <span><span class="pulse"></span>fig.&nbsp;<span data-fig-num>1</span></span>
+          <span data-fig-year>{{ site.data.story.first.year }}</span>
+        </div>
+        <svg class="scene" viewBox="0 0 400 300" role="img" aria-label="Animated figure illustrating the current chapter" data-scene></svg>
+        <figcaption class="figure-card__caption" data-fig-caption>{{ site.data.story.first.caption }}</figcaption>
+        <ol class="rail mono" aria-hidden="true">
+          {%- for c in site.data.story %}
+          <li class="rail__item{% if forloop.first %} is-active{% endif %}" data-rail="{{ forloop.index0 }}"><span>{{ c.year }}</span></li>
+          {%- endfor %}
+        </ol>
+      </figure>
+    </div>
+
+    <div class="story__chapters">
+      {%- for c in site.data.story %}
+      <article class="chapter" data-chapter data-scene-key="{{ c.scene }}" data-caption="{{ c.caption | escape }}" data-year="{{ c.year }}">
+        <p class="chapter__year" aria-hidden="true">{{ c.year }}</p>
+        <p class="eyebrow mono">{{ c.kicker }}</p>
+        <h3 class="chapter__title">{{ c.title }}</h3>
+        <div class="chapter__body">{{ c.body | markdownify }}</div>
+        {%- if c.papers %}
+        <ul class="chapter__papers">
+          {%- for pid in c.papers %}
+          {%- assign p = site.data.publications | where: "id", pid | first %}
+          {%- if p %}
+          <li><a href="{{ '/archive/' | relative_url }}#{{ p.id }}"><span class="badge">{{ p.badge }}</span><span class="chapter__paper-title">{{ p.title | truncate: 72 }}</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></li>
+          {%- endif %}
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ============================== NOW ============================== -->
+<section class="section now" id="now">
+  <header class="section-head wrap">
+    <p class="eyebrow mono">02 / Now</p>
+    <h2 class="section-title" data-split-words>What I'm working on.</h2>
+    <p class="section-lede">Current projects at the Becker Friedman Institute and beyond.</p>
+  </header>
+  <div class="now__grid wrap">
+    {%- for n in site.data.now %}
+    <article class="card now-card reveal{% if n.placeholder %} is-placeholder{% endif %}" data-tilt>
+      <div class="now-card__top">
+        <span class="status mono"><span class="status__dot"></span>{{ n.status }}</span>
+        {%- if n.placeholder %}<span class="draft mono">draft</span>{% endif %}
+      </div>
+      <h3 class="card__title">{{ n.title }}</h3>
+      <p class="card__meta mono">{{ n.role }}</p>
+      <p class="card__text">{{ n.summary }}</p>
+      <div class="card__foot">
+        <ul class="tags">{% for t in n.tags %}<li>{{ t }}</li>{% endfor %}</ul>
+        {%- if n.links %}<div class="links">{% include links.html links=n.links %}</div>{% endif %}
+      </div>
+    </article>
+    {%- endfor %}
+  </div>
+</section>
+
+<!-- ============================== SELECTED RESEARCH ============================== -->
+<section class="section selected" id="research">
+  <header class="section-head wrap">
+    <p class="eyebrow mono">03 / Selected research</p>
+    <h2 class="section-title" data-split-words>Recent papers.</h2>
+  </header>
+  <div class="selected__list wrap">
+    {%- for p in featured %}
+    <article class="feature reveal">
+      {%- if p.image %}
+      <a class="feature__media" href="{{ '/archive/' | relative_url }}#{{ p.id }}">
+        <img src="{% include url.html u=p.image %}" alt="" loading="lazy">
+        <span class="badge">{{ p.badge }}</span>
+      </a>
+      {%- endif %}
+      <div class="feature__body">
+        <p class="card__meta mono">{{ p.year }} · {{ p.type }}{% if p.note %} · <span class="accent">{{ p.note }}</span>{% endif %}</p>
+        <h3 class="feature__title"><a href="{{ '/archive/' | relative_url }}#{{ p.id }}">{{ p.title }}</a></h3>
+        <p class="feature__authors">{% include authors.html authors=p.authors %}</p>
+        <p class="feature__venue">{{ p.venue }}</p>
+        <p class="feature__abstract">{{ p.abstract | truncatewords: 46 }}</p>
+        <div class="links">{% include links.html links=p.links %}</div>
+      </div>
+    </article>
+    {%- endfor %}
+  </div>
+  <div class="wrap center">
+    <a class="btn btn--ghost reveal" href="{{ '/archive/' | relative_url }}">Browse all {{ site.data.publications | size }} entries in the archive <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+  </div>
+</section>
+
+<!-- ============================== INTERESTS ============================== -->
+<section class="section interests" id="interests">
+  <header class="section-head wrap">
+    <p class="eyebrow mono">04 / Interests</p>
+    <h2 class="section-title" data-split-words>Fields I think in.</h2>
+  </header>
+  <div class="interests__grid wrap">
+    {%- for i in site.data.interests %}
+    <article class="card interest reveal" data-glow>
+      <span class="interest__idx mono">{{ forloop.index | prepend: "0" }}</span>
+      <h3 class="card__title">{{ i.name }}</h3>
+      <ul class="interest__items">
+        {%- assign items = i.items | split: ", " -%}
+        {%- for it in items %}<li>{{ it }}</li>{% endfor %}
+      </ul>
+    </article>
+    {%- endfor %}
+  </div>
+</section>
+
+<!-- ============================== TOOLS ============================== -->
+<section class="section tools-teaser" id="tools">
+  <header class="section-head wrap">
+    <p class="eyebrow mono">05 / Tools</p>
+    <h2 class="section-title" data-split-words>Code behind the papers.</h2>
+    <p class="section-lede">Replication packages and research codebases, kept so results can be rebuilt end to end.</p>
+  </header>
+  <div class="tools__grid wrap">
+    {%- assign shown = real_tools | slice: 0, 3 -%}
+    {%- for t in shown %}{% include tool-card.html tool=t %}{% endfor %}
+  </div>
+  <div class="wrap center">
+    <a class="btn btn--ghost reveal" href="{{ '/tools/' | relative_url }}">All research tools <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+  </div>
+</section>
+
+<!-- ============================== CONTACT ============================== -->
+<section class="section contact" id="contact">
+  <div class="contact__inner wrap reveal">
+    <p class="eyebrow mono">06 / Contact</p>
+    <h2 class="contact__title">Let's talk about <span class="accent">markets</span>.</h2>
+    <p class="section-lede">Questions about a paper, a dataset, or a collaboration? Email is best.</p>
+    <div class="contact__actions">
+      <a class="btn btn--primary btn--lg" href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope" aria-hidden="true"></i>{{ site.email }}</a>
+      <button class="btn btn--lg" type="button" data-copy="{{ site.email }}"><i class="fa-regular fa-copy" aria-hidden="true"></i><span>Copy email</span></button>
+    </div>
+    {% include social.html %}
+  </div>
+</section>

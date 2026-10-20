@@ -1,0 +1,39 @@
+---
+layout: default
+title: Research Tools
+slug: tools
+description: Replication packages, research codebases and tools by Sheyan Lalmohammed.
+---
+<section class="page-hero wrap">
+  <p class="eyebrow mono reveal">Tools</p>
+  <h1 class="page-title" data-split-words>Research tools.</h1>
+  <p class="section-lede reveal">The code behind the papers: replication packages, model implementations and the utilities I reuse across projects. Where a repository is private, email me for access.</p>
+</section>
+
+<section class="section section--tight wrap">
+  <div class="tools__grid tools__grid--page">
+    {%- for t in site.data.tools %}{% include tool-card.html tool=t %}{% endfor %}
+  </div>
+</section>
+
+<section class="section section--tight wrap">
+  <div class="workflow reveal">
+    <div>
+      <p class="eyebrow mono">Project template</p>
+      <h2 class="section-title">Replication-ready by design.</h2>
+      <p class="section-lede">A standard layout for taking a project from raw data to finished paper, so anyone can rerun the results with one command.</p>
+    </div>
+<pre class="terminal mono" aria-label="Typical project layout"><code><span class="t-dim">$</span> tree project/
+project/
+├── <span class="t-acc">data/</span>
+│   ├── raw/          <span class="t-dim"># untouched source files, never edited</span>
+│   └── derived/      <span class="t-dim"># built by code only</span>
+├── <span class="t-acc">code/</span>
+│   ├── 01_build/     <span class="t-dim"># cleaning and merges</span>
+│   ├── 02_estimate/  <span class="t-dim"># structural / reduced-form models</span>
+│   └── 03_output/    <span class="t-dim"># tables and figures</span>
+├── <span class="t-acc">output/</span>         <span class="t-dim"># generated, never hand-edited</span>
+├── paper/            <span class="t-dim"># LaTeX, pulls from output/</span>
+└── <span class="t-amb">run_all</span>           <span class="t-dim"># one command rebuilds everything</span></code></pre>
+  </div>
+</section>

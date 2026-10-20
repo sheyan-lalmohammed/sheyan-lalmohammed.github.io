@@ -1,0 +1,46 @@
+# Research tools: replication packages, codebases, datasets and methods.
+# Shown on /tools/ and (first three) on the home page.
+#
+#   name         display name
+#   kind         Replication package | Codebase | Dataset | Package | Notebook
+#   description  one or two sentences
+#   stack        list of languages / key libraries
+#   repo         URL (omit if none)
+#   private      true = repo is private; shows "Available on request" instead of a link
+#   paper        optional publication id from publications.yml
+#   placeholder  true = dashed draft card
+
+- name: "NFT Royalties: Replication Package"
+  kind: Replication package
+  description: >-
+    Data construction and estimation code for the NFT royalties thesis: Ethereum trade-level data
+    (2022–2024), enforcement-credibility and switching-cost measures, and the structural model.
+  stack: [Python]
+  repo: https://github.com/sheyan-lalmohammed/replication_package_economics_of_nft_royalties
+  private: true
+  paper: nft-royalties
+
+- name: "Bayesian Networks for BNPL Credit Risk"
+  kind: Codebase
+  description: >-
+    Static and dynamic Bayesian network models of Buy Now, Pay Later credit risk, with structure
+    learning, inference and evaluation notebooks.
+  stack: [Python, Jupyter]
+  repo: https://github.com/sheyan-lalmohammed/bnpl-bayesian-networks
+  paper: bnpl-credit-risk
+
+- name: "CPT-MARL"
+  kind: Codebase
+  description: >-
+    CPT-MADDPG: multi-agent deep deterministic policy gradients with cumulative prospect theory
+    preferences, plus experiments from the ICML 2025 MAS Workshop paper.
+  stack: [Python, Jupyter, TeX]
+  repo: https://github.com/sheyan-lalmohammed/STAT-4830-CPT-MARL-project
+  paper: cpt-marl
+
+- name: "Your next tool"
+  kind: Package
+  description: >-
+    Placeholder. An estimator, a data pipeline, or a template you use across projects.
+  stack: [Python]
+  placeholder: true

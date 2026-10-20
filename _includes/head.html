@@ -1,0 +1,37 @@
+{%- capture page_title -%}
+  {%- if page.title -%}{{ page.title }} | {{ site.title }}{%- else -%}{{ site.title }} | {{ site.position }}{%- endif -%}
+{%- endcapture -%}
+{%- assign page_desc = page.description | default: site.description | strip_newlines -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page_title }}</title>
+<meta name="description" content="{{ page_desc }}">
+<meta name="keywords" content="{{ site.keywords }}">
+<meta name="author" content="{{ site.title }}">
+<meta name="theme-color" content="#0a0708">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ page_title }}">
+<meta property="og:description" content="{{ page_desc }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ site.avatar | absolute_url }}">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" media="(prefers-color-scheme: dark)" href="{{ site.favicon_dark | relative_url }}" type="image/png">
+<link rel="icon" media="(prefers-color-scheme: light)" href="{{ site.favicon | relative_url }}" type="image/png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+<script>
+  // Enable animation-ready styles only when JS runs; fall back to fully visible content.
+  document.documentElement.classList.add('js');
+  setTimeout(function () {
+    if (!window.__siteReady) document.documentElement.classList.add('no-anim');
+  }, 2500);
+</script>

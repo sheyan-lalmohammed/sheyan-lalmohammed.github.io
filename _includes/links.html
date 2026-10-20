@@ -1,0 +1,17 @@
+{%- comment -%} Renders a links map (pdf, slides, code, ...) as buttons, in a fixed order. {%- endcomment -%}
+{%- assign order = "pdf,slides,code,data,page,video,bibtex" | split: "," -%}
+{%- for key in order -%}
+  {%- assign href = include.links[key] -%}
+  {%- if href and href != "" -%}
+    {%- case key -%}
+      {%- when "pdf" -%}{%- assign label = "PDF" -%}{%- assign icon = "fa-regular fa-file-pdf" -%}
+      {%- when "slides" -%}{%- assign label = "Slides" -%}{%- assign icon = "fa-solid fa-person-chalkboard" -%}
+      {%- when "code" -%}{%- assign label = "Code" -%}{%- assign icon = "fa-solid fa-code" -%}
+      {%- when "data" -%}{%- assign label = "Data" -%}{%- assign icon = "fa-solid fa-database" -%}
+      {%- when "page" -%}{%- assign label = "Page" -%}{%- assign icon = "fa-solid fa-arrow-up-right-from-square" -%}
+      {%- when "video" -%}{%- assign label = "Video" -%}{%- assign icon = "fa-solid fa-play" -%}
+      {%- when "bibtex" -%}{%- assign label = "BibTeX" -%}{%- assign icon = "fa-solid fa-quote-right" -%}
+    {%- endcase -%}
+    <a class="chip-link" href="{% include url.html u=href %}" target="_blank" rel="noopener"><i class="{{ icon }}" aria-hidden="true"></i>{{ label }}</a>
+  {%- endif -%}
+{%- endfor -%}

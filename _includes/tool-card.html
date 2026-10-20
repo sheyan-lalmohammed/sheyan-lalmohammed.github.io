@@ -1,0 +1,24 @@
+{%- assign t = include.tool -%}
+<article class="card tool reveal{% if t.placeholder %} is-placeholder{% endif %}" data-glow>
+  <div class="tool__bar mono" aria-hidden="true">
+    <span class="tool__dots"><i></i><i></i><i></i></span>
+    <span>{{ t.kind | downcase | replace: " ", "_" }}</span>
+  </div>
+  <div class="tool__body">
+    <p class="card__meta mono">{{ t.kind }}{% if t.placeholder %} · <span class="draft">draft</span>{% endif %}</p>
+    <h3 class="card__title">{{ t.name }}</h3>
+    <p class="card__text">{{ t.description }}</p>
+    <ul class="tags">{% for s in t.stack %}<li>{{ s }}</li>{% endfor %}</ul>
+    <div class="links">
+      {%- if t.repo and t.private %}
+      <span class="chip-link is-muted"><i class="fa-solid fa-lock" aria-hidden="true"></i>Private, available on request</span>
+      {%- elsif t.repo %}
+      <a class="chip-link" href="{{ t.repo }}" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>Repository</a>
+      {%- endif %}
+      {%- if t.paper %}
+      {%- assign p = site.data.publications | where: "id", t.paper | first %}
+      {%- if p %}<a class="chip-link" href="{{ '/archive/' | relative_url }}#{{ p.id }}"><i class="fa-regular fa-file-lines" aria-hidden="true"></i>{{ p.badge }}</a>{% endif %}
+      {%- endif %}
+    </div>
+  </div>
+</article>

@@ -1,0 +1,10 @@
+<footer class="footer">
+  <div class="footer__inner">
+    <div>
+      <p class="footer__name">{{ site.title }}</p>
+      <p class="footer__meta">{{ site.position }} · <a href="{{ site.affiliation_link }}" target="_blank" rel="noopener">{{ site.affiliation }}</a></p>
+    </div>
+    {% include social.html %}
+  </div>
+  <p class="footer__fine mono">© {{ site.time | date: "%Y" }} · Built with Jekyll &amp; GSAP · Last updated {{ site.time | date: "%b %Y" }}</p>
+</footer>

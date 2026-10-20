@@ -1,0 +1,68 @@
+# The scroll-driven story on the home page. One entry per chapter, in order.
+#
+#   year     label shown on the timeline rail
+#   kicker   small line above the title
+#   title    chapter headline
+#   body     one or two short paragraphs (markdown allowed)
+#   scene    which animated figure to show next to the chapter:
+#            line | network | dag | market | fit
+#   caption  figure caption under the animation
+#   papers   optional list of publication ids (from publications.yml) to link
+
+- year: "2022"
+  kicker: "Chapter 01: The first question"
+  title: "What happens when money becomes code?"
+  body: >-
+    My first piece of economics writing asked how the Federal Reserve and other central banks
+    should approach digital currencies. The essay placed in the **top 20 worldwide** in the
+    Harvard Undergraduate Economics Association's International Economics Essay Competition,
+    and it left me with a habit: start from the institution, then ask what incentives it creates.
+  scene: line
+  caption: "Fig. 1: Two monetary paths diverge as a new instrument is introduced."
+  papers: [cbdc-framework]
+
+- year: "2024"
+  kicker: "Chapter 02: Agents and institutions"
+  title: "Who wins when the market changes shape?"
+  body: >-
+    At Penn, studying Statistics at Wharton and Mathematical Economics in the College, I took that
+    question in two directions: whether digital currencies can widen financial inclusion in
+    developing economies, and how welfare should be measured when AI systems act as economic agents
+    alongside people, with trust, risk and cooperation modeled explicitly.
+  scene: network
+  caption: "Fig. 2: Human and AI agents forming a network of repeated interactions."
+  papers: [digital-currencies-development, ai-welfare]
+
+- year: "2025"
+  kicker: "Chapter 03: Modeling uncertainty"
+  title: "Structure, before prediction."
+  body: >-
+    As a Wharton Research Scholar I built Bayesian and dynamic Bayesian networks for credit risk in
+    Buy Now, Pay Later. In parallel I brought prospect theory into multi-agent reinforcement
+    learning (presented at the ICML 2025 MAS Workshop) and studied causal inference when one unit's
+    treatment spills over onto another's.
+  scene: dag
+  caption: "Fig. 3: A directed acyclic graph: dependencies made explicit."
+  papers: [bnpl-credit-risk, cpt-marl, causal-interference]
+
+- year: "2026"
+  kicker: "Chapter 04: Platforms and incentives"
+  title: "Enforcement is a strategic choice."
+  body: >-
+    My economics honors thesis asks why NFT marketplaces diverged on creator royalties. A
+    three-period model of competing platforms, heterogeneous traders and switching costs meets
+    Ethereum trade-level data from 2022 to 2024, and a structural model shows how enforcement
+    regimes and switching frictions reshape market shares.
+  scene: market
+  caption: "Fig. 4: Supply shifts, the equilibrium moves, and market shares follow."
+  papers: [nft-royalties]
+
+- year: "Now"
+  kicker: "Chapter 05: Chicago"
+  title: "Taking models to data, at scale."
+  body: >-
+    Today I'm a Research Professional (Pre-Doc) at the **Becker Friedman Institute for Economics**
+    at the University of Chicago, working on industrial organization, structural econometrics and
+    the empirical tools that connect them.
+  scene: fit
+  caption: "Fig. 5: Observations, a fitted structural curve, and its confidence band."
