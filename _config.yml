@@ -28,7 +28,8 @@ linkedin: https://www.linkedin.com/in/sheyan-lalmohammed/
 # Images
 avatar: assets/img/avatar.png
 favicon: assets/img/favicon.png
-favicon_dark: assets/img/favicon-dark.png
+icon_large: assets/img/icon-192.png
+apple_touch_icon: assets/img/apple-touch-icon.png
 
 # SEO
 url: https://sheyan-lalmohammed.github.io

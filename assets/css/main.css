@@ -138,8 +138,8 @@ button { font: inherit; color: inherit; }
 .nav__mark {
   display: grid; place-items: center;
   width: 34px; height: 34px; border-radius: 9px;
-  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 500;
-  color: #fff; background: linear-gradient(135deg, var(--acc-deep), var(--acc));
+  font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; letter-spacing: -0.05em;
+  color: #fff; background: linear-gradient(135deg, #8c1d32 0%, #c43a55 55%, var(--acc) 100%);
   box-shadow: 0 0 24px var(--acc-glow);
 }
 .nav__name { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.01em; }
