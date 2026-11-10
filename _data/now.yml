@@ -18,15 +18,17 @@
     and measure the bias on Expedia, ZOZO, Amazon and Avito data.
   tags: [Industrial Organization, Demand Estimation, Platforms]
 
-- title: "The Economics of Optional Royalties"
-  role: "Solo paper"
-  status: Pre-submission
+- title: "Competing Away a Property Right: Enforcement Architecture and Platform Competition in NFT Royalties"
+  role: "Solo paper · Under review at the International Journal of Industrial Organization"
+  status: Under review
   summary: >-
     Creator royalties on NFTs are written into the token but collected by competing marketplaces.
     Across sixteen Ethereum venues, other chains and Solana, entry by non-enforcing venues erodes
     compliance while token-level enforcement survives; a routing model on 1.6 million trader
     choices shows the entitlement was lost to intermediary competition, not trader evasion.
   tags: [Industrial Organization, Platforms, Structural Estimation]
+  links:
+    page: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7665741"
 
 - title: "Price Elasticities in Logit Demand Models"
   role: "Pre-Doc · Goldszmidt, Henry de Frahan, List, Mogstad, Muir & Torgovitsky"
@@ -36,3 +38,5 @@
     demand applications from cereal and autos to liquor, Medicare Advantage and painkillers. I
     contribute to the code pipeline that reproduces the paper's figures and tables.
   tags: [Econometrics, Demand Estimation]
+  links:
+    page: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6299878"
