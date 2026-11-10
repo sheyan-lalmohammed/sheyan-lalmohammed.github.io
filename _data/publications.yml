@@ -33,38 +33,36 @@
 #     One paragraph.
 
 - id: nft-royalties
-  title: "The Economics of Optional Royalties: Platform Competition, Enforcement, and Routing in NFT Markets"
-  authors: Sheyan Lalmohammed; Jere Behrman (advisor)
-  venue: "Economics Honors Thesis, University of Pennsylvania"
+  title: "Competing Away a Property Right: Enforcement Architecture and Platform Competition in NFT Royalties"
+  authors: Sheyan Lalmohammed
+  venue: "SSRN Working Paper 7665741 (prev. Senior Honors Thesis, University of Pennsylvania)"
   year: 2026
-  type: Thesis
+  type: Working paper
   badge: "NFT-Enforcement"
   tags: [Industrial Organization, Platforms, Structural Estimation]
   featured: true
+  note: "Under review at the International Journal of Industrial Organization"
   image: "assets/img/NFT-distribution.png"
   links:
-    pdf: "assets/files/nft_royalties.pdf"
-    slides: "assets/files/NFT-market-presentation.pdf"
+    pdf: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7665741"
   abstract: >-
-    This paper studies how royalty enforcement policies adopted by NFT marketplaces shape platform
-    competition, trader routing behavior, and creator revenues. Motivated by the recent divergence
-    between marketplaces that impose mandatory royalties and those that offer optional or weak
-    enforcement of royalties for creators, this paper develops a new three-period theoretical model with
-    a single creator, a continuum of heterogeneous traders, and competing platforms which can choose
-    their enforcement credibility. The model nests mandatory, optional, and zero-royalty regimes and
-    incorporates switching costs away from a collections minting platform. Through several analytical
-    cases, including monopoly, symmetric duopoly, trader information and motive differences, and
-    differing regime standoffs, the paper shows how enforcement choices interact with routing
-    incentives. In environments dominated by speculators or with low switching frictions, platforms face
-    downward pressures to zero enforcement credibility. When collectors or positive switching costs are
-    sufficiently important, interior non-zero enforcement equilibria or asymmetric outcomes are shown to
-    exist. Using Ethereum NFT trade-level data from 2022-2024, the paper additionally constructs
-    empirical measures of royalty enforcement credibility, effective trading costs, and switching
-    frictions. Using an estimated structural model, trader cost-sensitivity, collector valuation of
-    enforcement, share of speculators in trading population, and price-dependent switching costs are
-    found. Using the structural model, the paper shows that under changes to optional and mandatory
-    regime enforcement, strengthening or weakening optional royalty compliance, and reducing switching
-    frictions, key equilibrium changes to market share emerge.
+    When the intermediary that collects an obligation competes for the transaction it attaches to,
+    collection becomes a margin of competition, which we study in creator royalties on non-fungible
+    tokens, an entitlement written into the asset's code but collected by marketplaces. On Ethereum,
+    compliance fell from 97.5 percent in 2021 to 12.7 percent by early 2025, leaving $886 million
+    unpaid. A model of venue competition predicts that enforcement by the marketplace, which needs every
+    competitor's cooperation, unravels, while enforcement by the token, which refuses transfers to
+    venues the creator has not listed, does not. The two are substitutes with opposite effects whose
+    sizes depend on prior compliance. Across sixteen Ethereum marketplaces, fifteen other chains and
+    Solana, we find that entry by a non-enforcing venue lowers compliance by 0.052, as volume moves to it
+    while venues already in use keep paying. Installing a transfer validator raises it by 0.453, and on
+    one Solana marketplace, within collection-week, the enforced path settles 0.69 more of royalties
+    due. Trader avoidance is small. A two-type routing model on 1.6 million trader choices finds that
+    collectors value enforcement at about 1.18 times the royalty, conditional on the cost coefficient,
+    and that traders rarely reroute. With rivals' enforcement fixed, an incumbent enforcing alone would
+    recover nearly all the surplus of universal enforcement. The entitlement was lost through
+    competition among intermediaries rather than evasion by traders, and where enforcement sits decides
+    whether it survives.
 
 - id: bnpl-credit-risk
   title: "Bayesian and Dynamic Bayesian Networks for Credit Risk Modeling in Buy Now, Pay Later"

@@ -49,10 +49,11 @@
   kicker: "Chapter 04: Platforms and incentives"
   title: "Enforcement is a strategic choice."
   body: >-
-    My economics honors thesis asks why NFT marketplaces diverged on creator royalties. A
-    three-period model of competing platforms, heterogeneous traders and switching costs meets
-    Ethereum trade-level data from 2022 to 2024, and a structural model shows how enforcement
-    regimes and switching frictions reshape market shares.
+    What began as my senior honors thesis became a paper on why NFT creator royalties collapsed.
+    Royalties are written into the token but collected by competing marketplaces; across sixteen
+    Ethereum venues, other chains and Solana, enforcement by marketplaces unravels while enforcement
+    by the token survives, and a routing model on 1.6 million trader choices shows the entitlement
+    was lost to intermediary competition, not trader evasion.
   scene: market
   caption: "Fig. 4: Supply shifts, the equilibrium moves, and market shares follow."
   papers: [nft-royalties]

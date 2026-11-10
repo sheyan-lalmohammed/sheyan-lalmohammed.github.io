@@ -13,8 +13,8 @@
 - name: "NFT Royalties: Replication Package"
   kind: Replication package
   description: >-
-    Data construction and estimation code for the NFT royalties thesis: Ethereum trade-level data
-    (2022–2024), enforcement-credibility and switching-cost measures, and the structural model.
+    Data construction and estimation code for the NFT royalties paper: marketplace trade data from
+    Ethereum, other chains and Solana, royalty-compliance measures, and the trader routing model.
   stack: [Python]
   repo: https://github.com/sheyan-lalmohammed/replication_package_economics_of_nft_royalties
   private: true
