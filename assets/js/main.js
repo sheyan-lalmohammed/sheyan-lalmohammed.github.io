@@ -185,19 +185,6 @@
     }
   });
 
-  /* ---------- count-up stats ---------- */
-  document.querySelectorAll('[data-count]').forEach(function (el) {
-    var target = parseFloat(el.getAttribute('data-count')) || 0;
-    var suffix = el.getAttribute('data-suffix') || '';
-    var obj = { v: 0 };
-    el.textContent = '0' + suffix;
-    gsap.to(obj, {
-      v: target, duration: 1.6, ease: 'power2.out',
-      scrollTrigger: { trigger: el, start: 'top 92%', once: true },
-      onUpdate: function () { el.textContent = Math.round(obj.v) + suffix; }
-    });
-  });
-
   /* ---------- hero parallax on scroll ---------- */
   if (document.querySelector('.hero__inner')) {
     gsap.to('.hero__inner', {

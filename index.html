@@ -8,9 +8,6 @@ scripts:
 {%- assign pubs = site.data.publications | sort: "year" | reverse -%}
 {%- assign featured = pubs | where: "featured", true -%}
 {%- assign real_tools = site.data.tools | where_exp: "t", "t.placeholder != true" -%}
-{%- assign first_year = site.data.publications | map: "year" | sort | first -%}
-{%- assign this_year = site.time | date: "%Y" | plus: 0 -%}
-{%- assign years_active = this_year | minus: first_year -%}
 
 <!-- ============================== HERO ============================== -->
 <section class="hero" id="top">
@@ -47,29 +44,9 @@ scripts:
     <p class="readout__event" data-readout="event" aria-live="polite"></p>
   </aside>
 
-  <a class="hero__scroll mono" href="#stats" aria-label="Scroll down">
+  <a class="hero__scroll mono" href="#story" aria-label="Scroll down">
     <span>scroll</span><span class="hero__scroll-line" aria-hidden="true"></span>
   </a>
-</section>
-
-<!-- ============================== STATS ============================== -->
-<section class="stats wrap" id="stats" aria-label="At a glance">
-  <div class="stat reveal">
-    <span class="stat__num" data-count="{{ site.data.publications | size }}">{{ site.data.publications | size }}</span>
-    <span class="stat__label">papers, theses &amp; talks</span>
-  </div>
-  <div class="stat reveal">
-    <span class="stat__num" data-count="{{ real_tools | size }}">{{ real_tools | size }}</span>
-    <span class="stat__label">codebases &amp; replication packages</span>
-  </div>
-  <div class="stat reveal">
-    <span class="stat__num" data-count="{{ years_active }}" data-suffix="+">{{ years_active }}+</span>
-    <span class="stat__label">years doing research</span>
-  </div>
-  <div class="stat reveal">
-    <span class="stat__num" data-count="{{ site.data.interests | size }}">{{ site.data.interests | size }}</span>
-    <span class="stat__label">fields of interest</span>
-  </div>
 </section>
 
 <!-- ============================== STORY ============================== -->
